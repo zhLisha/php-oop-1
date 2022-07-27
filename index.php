@@ -6,7 +6,7 @@
         public $price;
         public $year;
 
-        public function __construct($_title, $_year) {
+        public function __construct($_title, $_length, $_genre, $_year) {
             $this->title = $_title;
             $this->length = $_length;
             $this->genre = $_genre;
@@ -23,10 +23,12 @@
         }
     }
 
-    $releaseYear = 2012;
-    $movieDetails = new Movie('Ciao Esmeralda', $releaseYear);
-    $movieDetails->length = '1h25m';
-    $movieDetails->genre = 'Romantico, Drammatico';
+    // Ciao Esmeralda movie
+    $ciaoEsmeralda = new Movie('Ciao Esmeralda', '1h25m', 'Romantico, Drammatico', 2012);
+
+    // Le avventure di Cecil
+    $leAvvDiCecil = new Movie('Le Avventure di Cecil', '1h50m', 'Avventura', 2017)
+    
 ?>
 
 
@@ -39,12 +41,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Titolo Film: "<?php echo $movieDetails->title ?>"</h1>
-    <ul>
-        <li>Durata: <?php echo $movieDetails->length ?></li>
-        <li>Genere: <?php echo $movieDetails->genre ?></li>
-        <li>Prezzo: <?php echo $movieDetails->setDiscout() ?> &euro; </li>
-        <li>Anno di uscita: <?php echo $movieDetails->year ?></li>
-    </ul>
+    <!-- Ciao Esmeralda -->
+    <div class="ciao-esmeralda">
+        <h2>Titolo Film: "<?php echo $ciaoEsmeralda->title ?>"</h2>
+        <ul>
+            <li>Durata: <?php echo $ciaoEsmeralda->length ?></li>
+            <li>Genere: <?php echo $ciaoEsmeralda->genre ?></li>
+            <li>Prezzo: <?php echo $ciaoEsmeralda->setDiscout() ?> &euro; </li>
+            <li>Anno di uscita: <?php echo $ciaoEsmeralda->year ?></li>
+        </ul>
+    </div>
+
+    <!-- Le Avventure di Cecil -->
+    <div class="le-avv-di-cecil">
+        <h2>Titolo Film: "<?php echo $leAvvDiCecil->title ?>"</h2>
+        <ul>
+            <li>Durata: <?php echo $leAvvDiCecil->length ?></li>
+            <li>Genere: <?php echo $leAvvDiCecil->genre ?></li>
+            <li>Prezzo: <?php echo $leAvvDiCecil->setDiscout() ?> &euro; </li>
+            <li>Anno di uscita: <?php echo $leAvvDiCecil->year ?></li>
+        </ul>
+    </div>
 </body>
 </html>
